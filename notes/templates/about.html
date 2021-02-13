@@ -1,0 +1,25 @@
+{% extends 'navigation.html' %}
+
+<style>
+
+</style>
+{% block body %}
+{% load static %}
+
+
+<div style="background-color: yellow; width:100%; height:100px">
+        <h3 class="text-red      pt-3 pl-30px justify-content-center">About us</h3>
+</div>   
+<div class="container">
+        <img src="{% static 'images/notes1.webp'%}" style="width: 100%; background-size:cover;">
+        <h4>
+                About Us
+        </h4>
+        <p>
+                Study Notes Sharing Site made with Django Html Css
+        </p>
+
+</div>
+
+
+{% endblock %}

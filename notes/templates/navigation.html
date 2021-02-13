@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title>Notes Sharing Site</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+{% comment %} these all links are from 'data table with export button' {% endcomment %}
+
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+
+<script>
+ 
+</script>
+</head>
+
+
+<body>
+    <!-- <h4 style="padding:3%">
+        <span style="color: red;">
+            Study Notes
+        </span>
+        <span style="color: magenta;">
+            Study Notes Sharing SIte
+        </span>
+    </h4> -->
+    <nav class="navbar navbar-expand-sm justify-content-center" style="background-color:lime;">
+        <ul class="navbar-nav">
+            <li class="navbar-item"><a href="{% url 'index'%}" class="nav-link">HOME</a></li>
+            <li class="navbar-item"><a href="{% url 'about'%}" class="nav-link">ABOUT</a></li>
+            <li class="navbar-item"><a href="{% url 'contact'%}" class="nav-link">CONTACT</a></li>
+            <li class="navbar-item"><a href="{% url 'userlogin' %}" class="nav-link">LOGIN</a></li>    
+            <li class="navbar-item"><a href="{% url 'login_admin'%}" class="nav-link">ADMIN LOGIN</a></li> 
+
+        </ul>
+
+    </nav>
+
+
+</body>
+
+</html>
+
+{% block body %}
+{% endblock %}
+
+
+
+
+{% comment %} icon of home form font awesome website script of fontawesome cdn compulsory {% endcomment %}

@@ -1,0 +1,86 @@
+{% extends 'navigation.html' %}
+{% block body %}
+{% load static %}
+
+<style>
+    .image {
+        width: 100%;
+        height: 1000px;
+        background: url("{% static 'images/notes2.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .transparentbox {
+        width: 100%;
+        height: 1000px;
+        background-color: lightgrey;
+        border: 1px solid #CD835F;
+        opacity: 0.6;
+    }
+
+    i{
+        padding-left: 52px;
+    }
+</style>
+
+
+
+<div class="image">
+    <div class="transparentbox text-center">
+        <p>STUDY NOTES SHARING SITE</p>
+    </div>
+
+
+</div>
+
+
+<h4 class="text-center text-danger mt-5 mb-5">
+    Just 4 Steps to follow
+</h4>
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-sm-3">
+            <div class="box-1">
+                <p class="halfcircle"><i class="text-center fas fa-user-circle text-white mt-4"
+                        style="font-size: 40px;"> </i></p>
+                <p class="halfcircleBottom text-white" style="font-size: 20px;">Create Account</p>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="box-1">
+                <p class="halfcircle"><i class="text-center fas fa-sign-in-alt circle text-white mt-4 justify-content-center"
+                        style="font-size: 40px;"> </i></p>
+                <p class="halfcircleBottom text-white" style="font-size: 30px;padding-left:20px;">Login</p>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="box-1">
+                <p class="halfcircle"><i class="text-center fas fa-upload circle text-white mt-4"
+                        style="font-size: 40px;"> </i></p>
+                <p class="halfcircleBottom text-white" style="font-size: 20px;">Upload Notes</p>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="box-1">
+                <p class="halfcircle"><i class="text-center fas fa-download text-white mt-4" style="font-size: 40px;">
+                    </i></p>
+                <p class="halfcircleBottom text-white" style="font-size: 20px;">Download Notes</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<br>
+<br>
+
+
+
+{% endblock %}

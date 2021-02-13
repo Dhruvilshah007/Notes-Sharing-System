@@ -1,0 +1,58 @@
+{% extends 'admin_navigation.html' %}
+
+
+{% block body %}
+{% load static %}
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+
+
+<div class="container mt-5">
+    <h2 class="text-center">Notes Status</h2>
+    <hr>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label> Notes Id</label>
+        <input type="text" name="notesid" class="form-control" value="{{notes.id}}" readonly>
+        <label>Status</label>
+        <select name="status" class="form-control">
+            <option value="Accept">Accept</option>
+            <option value="Reject">Reject</option>
+        </select>
+        <input type="submit" value="submit" class="btn btn-warning form-control my-4" > 
+    </form>
+
+
+
+</div>
+
+
+{% ifequal error "no" %}
+<script>
+    alert("Status Upadated succesfully");
+      window.location = ("{% url 'view_allnotes' %}");
+</script>
+
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert("Invalid login credentials,try Again");
+</script>
+{% endifequal %}
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'navigation.html' %}
+
+
+{% block body %}
+{% load static %}
+{% ifequal error "no" %}
+<script>
+    console.log("Sign Up succesfully");
+    alert("Sign Up Succesfully");
+    window.location = ("{% url 'userlogin' %}");
+</script>
+
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    console.log("Invalid login credentials");
+    alert("Invalid login credentials,try Again");
+</script>
+{% endifequal %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="text-center">Old Customers</h2>
+            <hr>
+            <p>By Creating an account with our website ,u will be able to upload your notes and download notes.....</p>
+           <center> <a href="{% url 'userlogin'%}" class="btn btn-danger text-white mt-5 ">Create an Account</a></center>
+
+        </div>
+        <div class="col-sm-6">
+            <h2 class="text-center">Register Here!</h2>
+            <hr>   
+            <p>
+                If you have not account than sign up here and then login
+            </p>
+
+            <form action="" method="POST"> 
+            {% csrf_token %}
+                <label for="">First Name</label>
+                <input type="text" class="form-control" name="firstname" placeholder="Enter FirstName">
+                <label for="">Last Name</label>
+                <input type="text" class="form-control" name="lastname" placeholder="Enter Last Name">
+                <label for="">Contact</label>
+                <input type="text" class="form-control" name="contact" placeholder="Enter Contact Number">
+
+                <label for="">Email Address</label>
+                <input type="email" class="form-control" name="emailid" placeholder="Enter Email Id">
+                <label for=""> Enter Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter Password">
+
+                <label for=""> Enter Branch</label>
+                <select class="form-control" name="branch">
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="IT">IT</option>
+                    <option value="Electrical">Electrical</option>
+                </select>
+                
+                <label for=""> Are You</label>
+                <select class="form-control" name="role">
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    
+                </select>
+         
+
+                
+                
+                <input type="submit" class="btn btn-primary mt-2" value="SIGNUP">
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}
